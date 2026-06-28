@@ -1,0 +1,2 @@
+# Script
+Backrooms: survival script
