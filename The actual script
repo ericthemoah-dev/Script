@@ -1,0 +1,260 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+
+local Window = Rayfield:CreateWindow({
+   Name = "Backrooms: Survival Script",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Rayfield Interface Suite",
+   LoadingSubtitle = "by emmie",
+   ShowText = "Rayfield", -- for mobile users to unhide Rayfield, change if you'd like
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from emitting warnings when the script has a version mismatch with the interface.
+
+   -- ScriptID = "sid_xxxxxxxxxxxx", -- Your Script ID from developer.sirius.menu — enables analytics, managed keys, and script hosting
+
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, 
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false, 
+      Invite = "noinvitelink", 
+      RememberJoins = true 
+   },
+
+   KeySystem = false, 
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided", 
+      FileName = "Key", 
+      SaveKey = true, 
+      GrabKeyFromSite = false, 
+      Key = {"Hello"} 
+   }
+})
+
+
+local MainTab = Window:CreateTab("Main", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Puzzles TP") 
+
+
+Rayfield:Notify({
+   Title = "Executed! 😼",
+   Content = "get those contras fuck the mods (dra i see u) 😉",
+   Duration = 6.5,
+   Image = nil,
+})
+
+
+local Button = MainTab:CreateButton({
+   Name = "Chair Room",
+   Callback = function()
+                   local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = workspace.Game.Maps.Level0.Furnitures:GetChildren()[219].Model.CFrame
+   end,
+})
+
+
+local Button = MainTab:CreateButton({
+   Name = "Sound Puzzle 1",
+   Callback = function()
+                   local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = workspace.Game.Maps.Level0.SidePuzzles.SoundPuzzle.Gate.CFrame
+   end,
+})
+
+
+local Button = MainTab:CreateButton({
+   Name = "Sound Puzzle 2",
+   Callback = function()
+                   local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = workspace.Game.Maps.Level0.SidePuzzles:GetChildren()[3].Gate.CFrame
+   end,
+})
+
+local ShopTab = Window:CreateTab("Shop", nil) -- Title, Image
+
+local ShopSection = ShopTab:CreateSection("Main-Base Vendor")
+
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Ammo",
+Options = {"Handgun Ammo", "Magnum Ammo", "Shotgun Shells", "Tactical Ammo", "Sniper Ammo"},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Food",
+Options = {"Almond Can", "Almond Bottle", "Energy Bar", "Canned Tomato", "Chips", "Mixed Vegetables", "Liquid Pain", "Adrenaline Can", "Chicken MRE", "Beef MRE"},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Weapons",
+Options = {"Ruger .22", "PPK", "Makarov", "PT92", "Colt Detective", "Stasfell", "G17", "DWM-19", "P250", "M1911", "Piercer", "FNP-45", "Deagle", "M44", "MAC-10", "UZI", "Remington-870", "HT5", "XM1014", "AKS-74U", "M4A1", "M1A", "AK-47", "Thompson", "Franchi-12", "RPK"},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Flashlight",
+Options = {"Basic Light", "Searcher Light", "Steel Light", "Tactical Light",},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Utilites",
+Options = {"Lockpick", "Grenade", "Molotov"},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Melee",
+Options = {"Baseball Bat", "Kitchen Knife", "Pipe", "Crowbar", "Hatchet", "Switchblade", "Golf Club", "M9 Bayonet", "Karambit", "Machete", "Pickaxe", "Tomahawk", "Shovel", "Fire Axe", "Arming Sword", "Sledgehammer"},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+
+local Dropdown = ShopTab:CreateDropdown({
+Name = "Accessory",
+Options = {"Light Vest", "Medium Vest", "Heavy Vest"},
+CurrentOption = {"None"},
+MultipleOptions = true,
+Flag = "Dropdown1",
+Callback = function(Options)
+        for _, selectedOption in ipairs(Options) do
+        
+        local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+        Event:FireServer(
+            "Armory",
+            selectedOption
+        )
+    end
+end,
+})
+
+local CharacterTab = Window:CreateTab("Character", nil)
+local CharacterSection = CharacterTab:CreateSection("Character Settings")
+
+
+local Toggle = CharacterTab:CreateToggle({
+   Name = "Auto Lockpick",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+ local player = game:GetService("Players").LocalPlayer
+
+print("Auto Lockpick running...")
+
+player.PlayerGui.ChildAdded:Connect(function(child)
+    if child.Name == "Lockpicking" then
+        task.wait(0.1)
+        
+        local bodyPart = child:FindFirstChild("BodyPart", true)
+        local finishEvent = child:FindFirstChild("FinishEvent", true)
+        
+        if bodyPart and bodyPart.Value and finishEvent then
+            finishEvent:FireServer(bodyPart.Value)
+            task.wait(0.1)
+            child:Destroy()
+            
+            local character = player.Character
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+            local hrp = character:FindFirstChild("HumanoidRootPart")
+            humanoid.WalkSpeed = 16
+            humanoid.JumpPower = 50
+            hrp.Anchored = false
+            print("Crate unlocked!")
+        end
+    end
+end)
+
+   end,
+})
+
+
+local ESPTab = Window:CreateTab("ESP", nil)
+local ESPSection = ESPTab:CreateSection("ESP toggles")
+
