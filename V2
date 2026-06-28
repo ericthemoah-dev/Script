@@ -1,0 +1,1040 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+   Name = "Backrooms: Survival Script",
+   Icon = 0,
+   LoadingTitle = "Rayfield Interface Suite",
+   LoadingSubtitle = "by emmie",
+   ShowText = "Rayfield",
+   Theme = "Default",
+   ToggleUIKeybind = "K",
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+   KeySystem = false,
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"Hello"}
+   }
+})
+
+local MainTab = Window:CreateTab("Main", nil)
+local MainSection = MainTab:CreateSection("Puzzles TP")
+
+Rayfield:Notify({
+   Title = "Executed! 😼",
+   Content = "get those contras fuck the mods (dra i see u) 😉",
+   Duration = 6.5,
+   Image = nil,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Chair Room",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = workspace.Game.Maps.Level0.SidePuzzles.Puzzle1.ExitDoor.Model.Door.MainDoor.CFrame
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Sound Puzzle 1",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = workspace.Game.Maps.Level0.SidePuzzles.SoundPuzzle.Gate.CFrame
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Sound Puzzle 2",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = workspace.Game.Maps.Level0.SidePuzzles:GetChildren()[3].Gate.CFrame
+   end,
+})
+
+local Divider = MainTab:CreateDivider()
+local MainSection = MainTab:CreateSection("Main TP")
+
+local Button = MainTab:CreateButton({
+   Name = "Lvl 1 Door",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-309.3787536621094, 5.99999475479126, 585.0751342773438)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Main Base",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-814.6865844726562, 6.100457191467285, -223.6001434326172)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Sheriker Nest",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-792.9042358398438, 5.999996185302734, 476.00311279296875)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Small Nest",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-8.658669471740723, 5.999996662139893, -260.3790283203125)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "StairCase loot Room",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-1115.115966796875, 5.999997138977051, 460.41015625)
+   end,
+})
+
+local Divider = MainTab:CreateDivider()
+local MainSection = MainTab:CreateSection("Vendors TP")
+
+local Button = MainTab:CreateButton({
+   Name = "Armory",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-897.5218505859375, 6.100456237792969, -220.33993530273438)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Vendor",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-485.133544921875, 6.099930763244629, 209.83453369140625)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Architect",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-572.0930786132812, 6.074213981628418, -846.6640625)
+   end,
+})
+
+local Divider = MainTab:CreateDivider()
+local MainSection = MainTab:CreateSection("SAFE ZONE TP")
+
+local Button = MainTab:CreateButton({
+   Name = "Safe Zone 1",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-487.723724365344, 5.999997138977051, -807.2764892578125)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Safe Zone 2",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-583.475830078125, 5.999996185302734, 513.13330078125)
+   end,
+})
+
+
+-- =====================
+--       SHOP TAB
+-- =====================
+local ShopTab = Window:CreateTab("Shop", nil)
+local ShopSection = ShopTab:CreateSection("Main-Base Vendor")
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Ammo",
+   Options = {"Handgun Ammo", "Magnum Ammo", "Shotgun Shells", "Tactical Ammo", "Sniper Ammo"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Ammo",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Food",
+   Options = {"Almond Can", "Almond Bottle", "Energy Bar", "Canned Tomato", "Chips", "Mixed Vegetables", "Liquid Pain", "Adrenaline Can", "Chicken MRE", "Beef MRE"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Food",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Weapons",
+   Options = {"Ruger .22", "PPK", "Makarov", "PT92", "Colt Detective", "Stasfell", "G17", "DWM-19", "P250", "M1911", "Piercer", "FNP-45", "Deagle", "M44", "MAC-10", "UZI", "Remington-870", "HT5", "XM1014", "AKS-74U", "M4A1", "M1A", "AK-47", "Thompson", "Franchi-12", "RPK"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Weapons",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Flashlight",
+   Options = {"Basic Light", "Searcher Light", "Steel Light", "Tactical Light"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Flashlights",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Utilites",
+   Options = {"Lockpick", "Grenade", "Molotov"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Utilites",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Melee",
+   Options = {"Baseball Bat", "Kitchen Knife", "Pipe", "Crowbar", "Hatchet", "Switchblade", "Golf Club", "M9 Bayonet", "Karambit", "Machete", "Pickaxe", "Tomahawk", "Shovel", "Fire Axe", "Arming Sword", "Sledgehammer"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Melee",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+local Dropdown = ShopTab:CreateDropdown({
+   Name = "Accessory",
+   Options = {"Light Vest", "Medium Vest", "Heavy Vest"},
+   CurrentOption = {"None"},
+   MultipleOptions = true,
+   Flag = "Dropdown_Accessory",
+   Callback = function(Options)
+      for _, selectedOption in ipairs(Options) do
+         local Event = game:GetService("ReplicatedStorage").Game.Events.Remotes.ShopProcess
+         Event:FireServer("Armory", selectedOption)
+      end
+   end,
+})
+
+
+-- =====================
+--    CHARACTER TAB
+-- =====================
+local CharacterTab = Window:CreateTab("Character", nil)
+local CharacterSection = CharacterTab:CreateSection("Player Settings")
+
+local Slider = CharacterTab:CreateSlider({
+   Name = "WalkSpeed Slider",
+   Range = {1, 100},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderws",
+   Callback = function(Value)
+      local Player = game.Players.LocalPlayer
+      local Character = Player.Character or Player.CharacterAdded:Wait()
+      if Character:FindFirstChild("Humanoid") then
+         Character.Humanoid.WalkSpeed = Value
+      end
+   end,
+})
+
+local JumpSlider = CharacterTab:CreateSlider({
+   Name = "JumpPower Slider",
+   Range = {1, 300},
+   Increment = 1,
+   Suffix = "Power",
+   CurrentValue = 50,
+   Flag = "sliderjp",
+   Callback = function(Value)
+      local Player = game.Players.LocalPlayer
+      local Character = Player.Character or Player.CharacterAdded:Wait()
+      if Character:FindFirstChild("Humanoid") then
+         Character.Humanoid.JumpPower = Value
+      end
+   end,
+})
+
+local Divider = CharacterTab:CreateDivider()
+
+local Noclip = false
+local NoclipConnection
+
+local Toggle = CharacterTab:CreateToggle({
+   Name = "Noclip",
+   CurrentValue = false,
+   Flag = "togglenoclip",
+   Callback = function(Value)
+      Noclip = Value
+      if Noclip then
+         NoclipConnection = game:GetService("RunService").Heartbeat:Connect(function()
+            local Character = game.Players.LocalPlayer.Character
+            if Character then
+               local HRP = Character:FindFirstChild("HumanoidRootPart")
+               if HRP then HRP.CanCollide = false end
+               for _, part in pairs(Character:GetDescendants()) do
+                  if part:IsA("BasePart") and part.CanCollide then
+                     part.CanCollide = false
+                  end
+               end
+            end
+         end)
+      else
+         if NoclipConnection then
+            NoclipConnection:Disconnect()
+            NoclipConnection = nil
+         end
+         local Character = game.Players.LocalPlayer.Character
+         if Character then
+            for _, part in pairs(Character:GetDescendants()) do
+               if part:IsA("BasePart") then
+                  part.CanCollide = true
+               end
+            end
+         end
+      end
+   end,
+})
+
+local AutoLockpickEnabled = false
+local player = game:GetService("Players").LocalPlayer
+
+player.PlayerGui.ChildAdded:Connect(function(child)
+   if child.Name == "Lockpicking" and AutoLockpickEnabled then
+      task.wait(0.1)
+      local bodyPart = child:FindFirstChild("BodyPart", true)
+      local finishEvent = child:FindFirstChild("FinishEvent", true)
+      if bodyPart and bodyPart.Value and finishEvent then
+         finishEvent:FireServer(bodyPart.Value)
+         task.wait(0.1)
+         child:Destroy()
+         local character = player.Character
+         if character then
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+            local hrp = character:FindFirstChild("HumanoidRootPart")
+            if humanoid then
+               humanoid.WalkSpeed = 16
+               humanoid.JumpPower = 50
+            end
+            if hrp then hrp.Anchored = false end
+         end
+         print("Crate unlocked!")
+      end
+   end
+end)
+
+local Toggle = CharacterTab:CreateToggle({
+   Name = "Auto Lockpick",
+   CurrentValue = false,
+   Flag = "togglelockpick",
+   Callback = function(Value)
+      AutoLockpickEnabled = Value
+   end,
+})
+
+local Divider = CharacterTab:CreateDivider()
+local CharacterSection2 = CharacterTab:CreateSection("Fly Settings")
+
+local Flying = false
+local FlyConnection
+local BodyVelocity
+local BodyGyro
+
+local function StartFly()
+   local Player = game.Players.LocalPlayer
+   if not Player.Character then
+      Player.CharacterAdded:Wait()
+   end
+   local Character = Player.Character
+   if not Character then return end
+   
+   local HRP = Character:FindFirstChild("HumanoidRootPart")
+   local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+   
+   if not HRP or not Humanoid then return end
+   
+   -- Clean up old instances if they exist
+   if BodyVelocity then BodyVelocity:Destroy() end
+   if BodyGyro then BodyGyro:Destroy() end
+   
+   Humanoid.PlatformStand = true
+   task.wait(0.1)
+
+   BodyVelocity = Instance.new("BodyVelocity")
+   BodyVelocity.Velocity = Vector3.zero
+   BodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+   BodyVelocity.Parent = HRP
+
+   BodyGyro = Instance.new("BodyGyro")
+   BodyGyro.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+   BodyGyro.P = 9000
+   BodyGyro.D = 500
+   BodyGyro.CFrame = HRP.CFrame
+   BodyGyro.Parent = HRP
+
+   FlyConnection = game:GetService("RunService").RenderStepped:Connect(function()
+      local Character = Player.Character
+      if not Character then return end
+      local HRP = Character:FindFirstChild("HumanoidRootPart")
+      local Camera = workspace.CurrentCamera
+      if not HRP or not BodyVelocity or not BodyGyro then return end
+
+      local Speed = 50
+      local Direction = Vector3.zero
+      local UIS = game:GetService("UserInputService")
+
+      if UIS:IsKeyDown(Enum.KeyCode.W) then Direction = Direction + Camera.CFrame.LookVector end
+      if UIS:IsKeyDown(Enum.KeyCode.S) then Direction = Direction - Camera.CFrame.LookVector end
+      if UIS:IsKeyDown(Enum.KeyCode.A) then Direction = Direction - Camera.CFrame.RightVector end
+      if UIS:IsKeyDown(Enum.KeyCode.D) then Direction = Direction + Camera.CFrame.RightVector end
+      if UIS:IsKeyDown(Enum.KeyCode.Space) then Direction = Direction + Vector3.new(0, 1, 0) end
+      if UIS:IsKeyDown(Enum.KeyCode.LeftShift) then Direction = Direction - Vector3.new(0, 1, 0) end
+
+      if Direction.Magnitude > 0 then
+         BodyVelocity.Velocity = Direction.Unit * Speed
+      else
+         BodyVelocity.Velocity = Vector3.zero
+      end
+      
+      BodyGyro.CFrame = Camera.CFrame
+   end)
+end
+
+local function StopFly()
+   local Player = game.Players.LocalPlayer
+   local Character = Player.Character
+   
+   if FlyConnection then
+      FlyConnection:Disconnect()
+      FlyConnection = nil
+   end
+   
+   if BodyVelocity then
+      BodyVelocity:Destroy()
+      BodyVelocity = nil
+   end
+   
+   if BodyGyro then
+      BodyGyro:Destroy()
+      BodyGyro = nil
+   end
+   
+   if Character then
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+      if Humanoid then
+         Humanoid.PlatformStand = false
+      end
+   end
+end
+
+local FlyToggle = CharacterTab:CreateToggle({
+   Name = "CFrame Fly",
+   CurrentValue = false,
+   Flag = "togglefly",
+   Callback = function(Value)
+      Flying = Value
+      if Flying then StartFly() else StopFly() end
+   end,
+})
+
+local Keybind = CharacterTab:CreateKeybind({
+   Name = "Fly Keybind",
+   CurrentKeybind = "F",
+   HoldToInteract = false,
+   Flag = "keybindfly",
+   Callback = function()
+      Flying = not Flying
+      if Flying then StartFly() else StopFly() end
+      Rayfield:Notify({
+         Title = "Fly " .. (Flying and "Enabled" or "Disabled"),
+         Content = "CFrame fly has been turned " .. (Flying and "on" or "off"),
+         Duration = 2,
+         Image = nil,
+      })
+   end,
+})
+
+
+-- =====================
+--       ESP TAB
+-- =====================
+local ESPTab = Window:CreateTab("ESP", nil)
+local ESPSection = ESPTab:CreateSection("ESP Settings")
+
+local ESPEnabled = false
+local BoxESP = false
+local NameESP = false
+local DistanceESP = false
+
+local ESPObjects = {}
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local ESPConnection
+
+local function RemoveESP(player)
+   if ESPObjects[player] then
+      for _, obj in pairs(ESPObjects[player]) do
+         obj:Remove()
+      end
+      ESPObjects[player] = nil
+   end
+end
+
+local function CreateESP(player)
+   if player == LocalPlayer then return end
+   RemoveESP(player)
+
+   local objects = {}
+
+   local box = Drawing.new("Square")
+   box.Visible = false
+   box.Color = Color3.fromRGB(255, 50, 50)
+   box.Thickness = 1.5
+   box.Filled = false
+   objects.box = box
+
+   local name = Drawing.new("Text")
+   name.Visible = false
+   name.Color = Color3.fromRGB(255, 255, 255)
+   name.Size = 14
+   name.Center = true
+   name.Outline = true
+   name.Text = player.Name
+   objects.name = name
+
+   local distance = Drawing.new("Text")
+   distance.Visible = false
+   distance.Color = Color3.fromRGB(200, 200, 200)
+   distance.Size = 12
+   distance.Center = true
+   distance.Outline = true
+   objects.distance = distance
+
+   ESPObjects[player] = objects
+end
+
+local function UpdateESP()
+   local camera = workspace.CurrentCamera
+   for _, player in pairs(Players:GetPlayers()) do
+      if player == LocalPlayer then continue end
+      local objects = ESPObjects[player]
+      if not objects then continue end
+
+      local character = player.Character
+      local hrp = character and character:FindFirstChild("HumanoidRootPart")
+      local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+
+      if not hrp or not humanoid or humanoid.Health <= 0 then
+         for _, obj in pairs(objects) do obj.Visible = false end
+         continue
+      end
+
+      local screenPos, onScreen = camera:WorldToViewportPoint(hrp.Position)
+
+      if not onScreen then
+         for _, obj in pairs(objects) do obj.Visible = false end
+         continue
+      end
+
+      local dist = math.floor((LocalPlayer.Character and
+         LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and
+         (LocalPlayer.Character.HumanoidRootPart.Position - hrp.Position).Magnitude) or 0)
+
+      local scaleFactor = 1 / (screenPos.Z * 0.01)
+      local boxHeight = scaleFactor * 5
+      local boxWidth = boxHeight * 0.65
+
+      objects.box.Visible = BoxESP and true or false
+      if BoxESP then
+         objects.box.Size = Vector2.new(boxWidth, boxHeight)
+         objects.box.Position = Vector2.new(screenPos.X - boxWidth / 2, screenPos.Y - boxHeight / 2)
+      end
+
+      objects.name.Visible = NameESP and true or false
+      if NameESP then
+         objects.name.Position = Vector2.new(screenPos.X, screenPos.Y - boxHeight / 2 - 16)
+         objects.name.Text = player.Name
+      end
+
+      objects.distance.Visible = DistanceESP and true or false
+      if DistanceESP then
+         objects.distance.Position = Vector2.new(screenPos.X, screenPos.Y + boxHeight / 2 + 4)
+         objects.distance.Text = dist .. " studs"
+      end
+   end
+end
+
+local function EnableESP()
+   for _, player in pairs(Players:GetPlayers()) do
+      CreateESP(player)
+   end
+   Players.PlayerAdded:Connect(CreateESP)
+   Players.PlayerRemoving:Connect(RemoveESP)
+   ESPConnection = RunService.RenderStepped:Connect(UpdateESP)
+end
+
+local function DisableESP()
+   if ESPConnection then
+      ESPConnection:Disconnect()
+      ESPConnection = nil
+   end
+   for _, player in pairs(Players:GetPlayers()) do
+      RemoveESP(player)
+   end
+end
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Enable ESP",
+   CurrentValue = false,
+   Flag = "toggleesp",
+   Callback = function(Value)
+      ESPEnabled = Value
+      if ESPEnabled then
+         EnableESP()
+         Rayfield:Notify({
+            Title = "ESP Enabled",
+            Content = "ESP is now active!",
+            Duration = 2,
+            Image = nil,
+         })
+      else
+         DisableESP()
+         Rayfield:Notify({
+            Title = "ESP Disabled",
+            Content = "ESP has been turned off.",
+            Duration = 2,
+            Image = nil,
+         })
+      end
+   end,
+})
+
+local Divider = ESPTab:CreateDivider()
+local ESPSection2 = ESPTab:CreateSection("ESP Options")
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Box ESP",
+   CurrentValue = false,
+   Flag = "togglebox",
+   Callback = function(Value) BoxESP = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Name ESP",
+   CurrentValue = false,
+   Flag = "togglename",
+   Callback = function(Value) NameESP = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Distance ESP",
+   CurrentValue = false,
+   Flag = "toggledistance",
+   Callback = function(Value) DistanceESP = Value end,
+})
+
+
+-- =====================
+--      CRATE ESP
+-- =====================
+local Divider = ESPTab:CreateDivider()
+local CrateSection = ESPTab:CreateSection("Crate ESP")
+
+local CrateESPObjects = {}
+local LockpickESPEnabled = false
+local BoxESPEnabled = false
+
+local LockpickToggles = {
+   LockpickCrate = false,
+   LockpickCrate_Contraband = false,
+   LockpickCrate_Restricted = false,
+   LockpickCrate_Prototype = false,
+   LockpickCrate_Specialist = false,
+}
+
+local BoxToggles = {
+   Common = false,
+   RarityFixedCommon = false,
+   RaritySpecified = false,
+   RaritySpecifiedFixed = false,
+}
+
+local CrateColors = {
+   LockpickCrate = Color3.fromRGB(255, 255, 255),
+   LockpickCrate_Contraband = Color3.fromRGB(255, 50, 50),
+   LockpickCrate_Restricted = Color3.fromRGB(255, 150, 0),
+   LockpickCrate_Prototype = Color3.fromRGB(0, 150, 255),
+   LockpickCrate_Specialist = Color3.fromRGB(180, 0, 255),
+   Common = Color3.fromRGB(180, 180, 180),
+   RarityFixedCommon = Color3.fromRGB(100, 220, 100),
+   RaritySpecified = Color3.fromRGB(0, 180, 255),
+   RaritySpecifiedFixed = Color3.fromRGB(255, 215, 0),
+}
+
+local function RemoveCrateESP(crate)
+   if CrateESPObjects[crate] then
+      for _, obj in pairs(CrateESPObjects[crate]) do
+         if obj and obj.Parent then
+            obj:Destroy()
+         end
+      end
+      CrateESPObjects[crate] = nil
+   end
+end
+
+-- FIXED: switched from SelectionBox to Highlight, handles nested Models
+local function GetCratePart(crate)
+   if crate:IsA("BasePart") then
+      return crate
+   elseif crate:IsA("Model") then
+      return crate.PrimaryPart or crate:FindFirstChildWhichIsA("BasePart", true)
+   end
+   return nil
+end
+
+local function CreateCrateESP(crate, color)
+   if CrateESPObjects[crate] then return end
+   local part = GetCratePart(crate)
+   if not part then return end
+
+   local highlight = Instance.new("Highlight")
+   highlight.Adornee = crate
+   highlight.FillColor = color
+   highlight.OutlineColor = color
+   highlight.FillTransparency = 0.5
+   highlight.OutlineTransparency = 0
+   highlight.Parent = crate
+
+   CrateESPObjects[crate] = {highlight}
+end
+
+-- FIXED: switched from GetChildren to GetDescendants to find nested crates
+local function UpdateCrateESP()
+   if LockpickESPEnabled then
+      local ok, folder = pcall(function() return workspace.Game.Items.LockpickCrates.Special end)
+      if ok and folder then
+         for _, crate in pairs(folder:GetDescendants()) do
+            local crateName = crate.Name
+            if LockpickToggles[crateName] then
+               CreateCrateESP(crate, CrateColors[crateName] or Color3.fromRGB(255, 255, 255))
+            else
+               RemoveCrateESP(crate)
+            end
+         end
+      end
+   else
+      local ok, folder = pcall(function() return workspace.Game.Items.LockpickCrates.Special end)
+      if ok and folder then
+         for _, crate in pairs(folder:GetDescendants()) do
+            RemoveCrateESP(crate)
+         end
+      end
+   end
+
+   if BoxESPEnabled then
+      local ok1, commonFolder = pcall(function() return workspace.Game.Items.Boxes.Common end)
+      if ok1 and commonFolder then
+         for _, crate in pairs(commonFolder:GetDescendants()) do
+            if BoxToggles.Common then
+               CreateCrateESP(crate, CrateColors.Common)
+            else
+               RemoveCrateESP(crate)
+            end
+         end
+      end
+
+      local ok2, specialFolder = pcall(function() return workspace.Game.Items.Boxes.Special end)
+      if ok2 and specialFolder then
+         for _, crate in pairs(specialFolder:GetDescendants()) do
+            local crateName = crate.Name
+            if BoxToggles[crateName] then
+               CreateCrateESP(crate, CrateColors[crateName] or Color3.fromRGB(255, 255, 255))
+            else
+               RemoveCrateESP(crate)
+            end
+         end
+      end
+   else
+      local ok1, commonFolder = pcall(function() return workspace.Game.Items.Boxes.Common end)
+      if ok1 and commonFolder then
+         for _, crate in pairs(commonFolder:GetDescendants()) do
+            RemoveCrateESP(crate)
+         end
+      end
+      local ok2, specialFolder = pcall(function() return workspace.Game.Items.Boxes.Special end)
+      if ok2 and specialFolder then
+         for _, crate in pairs(specialFolder:GetDescendants()) do
+            RemoveCrateESP(crate)
+         end
+      end
+   end
+end
+
+local CrateESPConnection
+local function StartCrateESP()
+   CrateESPConnection = RunService.Heartbeat:Connect(UpdateCrateESP)
+end
+
+local function StopCrateESP()
+   if CrateESPConnection then
+      CrateESPConnection:Disconnect()
+      CrateESPConnection = nil
+   end
+   for crate, _ in pairs(CrateESPObjects) do
+      RemoveCrateESP(crate)
+   end
+end
+
+local LockpickMaster = ESPTab:CreateToggle({
+   Name = "Lockpick Crate ESP",
+   CurrentValue = false,
+   Flag = "togglelockpickesp",
+   Callback = function(Value)
+      LockpickESPEnabled = Value
+      if Value and not CrateESPConnection then
+         StartCrateESP()
+      elseif not Value and not BoxESPEnabled then
+         StopCrateESP()
+      end
+      Rayfield:Notify({
+         Title = "Lockpick Crate ESP " .. (Value and "Enabled" or "Disabled"),
+         Content = Value and "Lockpick crates are now highlighted!" or "Lockpick crate ESP turned off.",
+         Duration = 2,
+         Image = nil,
+      })
+   end,
+})
+
+local Divider = ESPTab:CreateDivider()
+local LockpickSection = ESPTab:CreateSection("Lockpick Crate Types")
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Lockpick Crate (White)",
+   CurrentValue = false,
+   Flag = "esp_lpcrate",
+   Callback = function(Value) LockpickToggles.LockpickCrate = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Contraband Crate (Red)",
+   CurrentValue = false,
+   Flag = "esp_contraband",
+   Callback = function(Value) LockpickToggles.LockpickCrate_Contraband = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Restricted Crate (Orange)",
+   CurrentValue = false,
+   Flag = "esp_restricted",
+   Callback = function(Value) LockpickToggles.LockpickCrate_Restricted = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Prototype Crate (Blue)",
+   CurrentValue = false,
+   Flag = "esp_prototype",
+   Callback = function(Value) LockpickToggles.LockpickCrate_Prototype = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Specialist Crate (Purple)",
+   CurrentValue = false,
+   Flag = "esp_specialist",
+   Callback = function(Value) LockpickToggles.LockpickCrate_Specialist = Value end,
+})
+
+local Divider = ESPTab:CreateDivider()
+
+local BoxMaster = ESPTab:CreateToggle({
+   Name = "Box Crate ESP",
+   CurrentValue = false,
+   Flag = "toggleboxesp",
+   Callback = function(Value)
+      BoxESPEnabled = Value
+      if Value and not CrateESPConnection then
+         StartCrateESP()
+      elseif not Value and not LockpickESPEnabled then
+         StopCrateESP()
+      end
+      Rayfield:Notify({
+         Title = "Box Crate ESP " .. (Value and "Enabled" or "Disabled"),
+         Content = Value and "Box crates are now highlighted!" or "Box crate ESP turned off.",
+         Duration = 2,
+         Image = nil,
+      })
+   end,
+})
+
+local Divider = ESPTab:CreateDivider()
+local BoxSection = ESPTab:CreateSection("Box Crate Types")
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Common Box (Grey)",
+   CurrentValue = false,
+   Flag = "esp_common",
+   Callback = function(Value) BoxToggles.Common = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Rarity Fixed Common (Green)",
+   CurrentValue = false,
+   Flag = "esp_rarityfixedcommon",
+   Callback = function(Value) BoxToggles.RarityFixedCommon = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Rarity Specified (Cyan)",
+   CurrentValue = false,
+   Flag = "esp_rarityspecified",
+   Callback = function(Value) BoxToggles.RaritySpecified = Value end,
+})
+
+local Toggle = ESPTab:CreateToggle({
+   Name = "Rarity Specified Fixed (Gold)",
+   CurrentValue = false,
+   Flag = "esp_rarityspecifiedfixed",
+   Callback = function(Value) BoxToggles.RaritySpecifiedFixed = Value end,
+})
+
+
+-- =====================
+--     ZOMBIE ESP
+-- =====================
+local Divider = ESPTab:CreateDivider()
+local MonsterSection = ESPTab:CreateSection("Monster ESP")
+
+local MonsterESPObjects = {}
+local MonsterESPEnabled = false
+local MonsterESPConnection
+
+local function RemoveMonsterESP(monster)
+   if MonsterESPObjects[monster] then
+      for _, obj in pairs(MonsterESPObjects[monster]) do
+         if obj and obj.Parent then
+            obj:Destroy()
+         end
+      end
+      MonsterESPObjects[monster] = nil
+   end
+end
+
+local function CreateMonsterESP(monster)
+   if MonsterESPObjects[monster] then return end
+   
+   local highlight = Instance.new("Highlight")
+   highlight.Adornee = monster
+   highlight.FillColor = Color3.fromRGB(255, 0, 0)
+   highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+   highlight.FillTransparency = 0.4
+   highlight.OutlineTransparency = 0
+   highlight.Parent = monster
+   
+   MonsterESPObjects[monster] = {highlight}
+end
+
+local function UpdateMonsterESP()
+   if MonsterESPEnabled then
+      local ok, folder = pcall(function() return workspace.NPCs.Zombies end)
+      if ok and folder then
+         for _, monster in pairs(folder:GetDescendants()) do
+            if monster:IsA("Model") or monster:IsA("BasePart") then
+               CreateMonsterESP(monster)
+            end
+         end
+      end
+   else
+      local ok, folder = pcall(function() return workspace.NPCs.Zombies end)
+      if ok and folder then
+         for _, monster in pairs(folder:GetDescendants()) do
+            RemoveMonsterESP(monster)
+         end
+      end
+   end
+end
+
+local function StartMonsterESP()
+   MonsterESPConnection = RunService.Heartbeat:Connect(UpdateMonsterESP)
+end
+
+local function StopMonsterESP()
+   if MonsterESPConnection then
+      MonsterESPConnection:Disconnect()
+      MonsterESPConnection = nil
+   end
+   local ok, folder = pcall(function() return workspace.NPCs.Zombies end)
+   if ok and folder then
+      for _, monster in pairs(folder:GetDescendants()) do
+         RemoveMonsterESP(monster)
+      end
+   end
+end
+
+local MonsterMaster = ESPTab:CreateToggle({
+   Name = "Monster ESP",
+   CurrentValue = false,
+   Flag = "togglemonsteresp",
+   Callback = function(Value)
+      MonsterESPEnabled = Value
+      if Value then
+         StartMonsterESP()
+         Rayfield:Notify({
+            Title = "Monster ESP Enabled",
+            Content = "All monsters are now highlighted in red!",
+            Duration = 2,
+            Image = nil,
+         })
+      else
+         StopMonsterESP()
+         Rayfield:Notify({
+            Title = "Monster ESP Disabled",
+            Content = "Monster ESP has been turned off.",
+            Duration = 2,
+            Image = nil,
+         })
+      end
+   end,
+})
